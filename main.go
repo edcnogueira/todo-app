@@ -1,6 +1,8 @@
 package main
 
 import (
+	components "github.com/edcnogueira/todo-app/components"
+
 	"fmt"
 	"log"
 	"net/http"
@@ -13,7 +15,7 @@ type GlobalState struct {
 var global GlobalState
 
 func getHandler(w http.ResponseWriter, r *http.Request) {
-	component := counts(global.Count, 0)
+	component := components.Counts(global.Count, 0)
 	component.Render(r.Context(), w)
 }
 
