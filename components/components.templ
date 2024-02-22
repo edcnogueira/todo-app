@@ -3,9 +3,6 @@ package components
 import "strconv"
 
 templ Counts(global, session int) {
-   <html>
-      <body>
-         <script src="https://unpkg.com/htmx.org@1.9.10"></script>
          <form id="countsForm" action="/" method="POST" hx-post="/" hx-select="#countsForm" hx-swap="outerHTML">
          <div class="columns">
             <div class={ "column", "has-text-centered", "is-primary" }>
@@ -20,6 +17,4 @@ templ Counts(global, session int) {
             </div>
          </div>
       </form>
-      </body>
-	</html>
 }

@@ -2,6 +2,7 @@ package main
 
 import (
 	components "github.com/edcnogueira/todo-app/components"
+	componentMain "github.com/edcnogueira/todo-app/components/layout/html"
 
 	"fmt"
 	"log"
@@ -16,7 +17,8 @@ var global GlobalState
 
 func getHandler(w http.ResponseWriter, r *http.Request) {
 	component := components.Counts(global.Count, 0)
-	component.Render(r.Context(), w)
+	mainComponent := componentMain.HtmlComponent(component)
+	mainComponent.Render(r.Context(), w)
 }
 
 func postHandler(w http.ResponseWriter, r *http.Request) {
