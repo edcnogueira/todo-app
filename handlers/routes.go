@@ -8,4 +8,5 @@ var (
 
 func Setup(app *fiber.App) {
 	app.Get("/", HandleViewHome)
+	app.Get("/login", HandleViewLogin)
 }

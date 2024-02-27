@@ -1,0 +1,65 @@
+package auth
+
+import (
+   "github.com/edcnogueira/todo-app/views"
+)
+
+templ LoginIndex(fromProtected bool) {
+	<section class="card w-fit bg-base-200 shadow-xl mx-auto mb-8">
+		<div class="card-body pb-2">
+			<h1 class="card-title border-b border-b-slate-600 pb-[4px]">
+				Login
+			</h1>
+			<form
+ 				hx-swap="transition:true"
+ 				class="rounded-xl drop-shadow-xl flex flex-col gap-4 w-96 p-8"
+ 				action=""
+ 				method="post"
+			>
+				<label class="flex flex-col justify-start gap-2">
+					Email:
+					<input
+ 						class="input input-bordered input-primary bg-slate-800 border-pink-900 ring-0 focus:border-pink-900"
+ 						type="email"
+ 						name="email"
+ 						required
+ 						autofocus
+ 						disabled?={ fromProtected }
+ 						if fromProtected {
+							value="disabled "
+						}
+					/>
+				</label>
+				<label class="flex flex-col justify-start gap-2">
+					Password:
+					<input
+ 						class="input input-bordered input-primary bg-slate-800 border-pink-900 ring-0"
+ 						type="password"
+ 						name="password"
+ 						required
+ 						minlength="6"
+ 						disabled?={ fromProtected }
+ 						if fromProtected {
+							value="disabled "
+						}
+					/>
+				</label>
+				<footer class="card-actions justify-end">
+					<button class="bg-pink-900 hover:bg-pink-600 text-neutral-100 px-4 py-1 gap-1 md:px-6 md:py-3 gap-3 text-sm rounded-md transition-all" disabled?={ fromProtected }>
+                  Login
+					</button>
+				</footer>
+			</form>
+		</div>
+	</section>
+}
+
+templ Login(
+        page string,
+        fromProtected bool,
+        cmp templ.Component,
+    ) {
+	@views.Layout(page, fromProtected, "") {
+		@cmp
+	}
+}
