@@ -1,7 +1,7 @@
 package partials
 
 templ Navbar(fromProtected bool, username string) {
-	<nav class="navbar bg-blue-500 text-primary-content fixed top-0 z-10">
+	<nav class="navbar bg-neutral-200 text-primary-content fixed top-0 z-10">
 		<div class="navbar-start">
 			<a hx-swap="transition:true" class="btn btn-ghost text-xl" href="/">
 				Todo List
@@ -26,12 +26,14 @@ templ Navbar(fromProtected bool, username string) {
 					Logout
 				</button>
 			} else {
-				<a hx-swap="transition:true" class="btn btn-ghost text-lg" href="/register">
-					Register
-				</a>
-				<a hx-swap="transition:true" class="btn btn-ghost text-lg" href="/login">
-					Login
-				</a>
+            <div class="flex items-center gap-2">        
+               <a hx-swap="transition:true" class="bg-pink-900 hover:bg-pink-600 text-neutral-100 px-4 py-1 gap-1 md:px-6 md:py-3 gap-3 text-md rounded-md transition-all" href="/register">
+                  Register
+               </a>
+               <a hx-swap="transition:true" class="hover:bg-pink-600 text-neutral-100 px-4 py-1 gap-1 md:px-6 md:py-3 gap-3 text-md rounded-md transition-all border border-pink-900 text-pink-900 hover:text-neutral-100" href="/login">
+                  Login
+               </a>
+            </div>
 			}
 		</div>
 	</nav>
