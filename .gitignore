@@ -1,1 +1,2 @@
-*.partial_temp.go
+**/*_templ.go
+**/*_templ.txt
