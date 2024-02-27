@@ -2,27 +2,27 @@ package views
 
 templ HomeIndex(fromProtected bool) {
 	<section class="mx-auto w-fit flex flex-col gap-8 text-center">
-		<h1 class="text-5xl font-bold">Welcome to our TodoList !!</h1>
+		<h1 class="text-5xl font-bold">Bem vido ao Todo List</h1>
 		<p class="text-2xl font-thin">
-			Here you can keep track of all your tasks and have an overview of your responsibilities.
+			Esse Todo é um experimento em Golang utilizando o HTMX, Tailwindcss, Templ e Fiber.
 		</p>
 		if !fromProtected {
 			<hr class="my-4 w-4/5 mx-auto opacity-25"/>
-			<p class="text-base font-thin">You have an account?</p>
+			<p class="text-base font-thin">Já possui uma conta?</p>
 			<footer class="flex gap-4 justify-center">
 				<a
  					hx-swap="transition:true"
- 					href="/login"
- 					class="badge badge-primary px-6 py-4 hover:scale-[1.1] text-lg font-thin"
-				>
-					Log In
-				</a>
-				<a
- 					hx-swap="transition:true"
  					href="/register"
- 					class="badge badge-neutral px-6 py-4 hover:scale-[1.1] text-lg font-thin"
+ 					class="bg-pink-900 hover:bg-pink-600 text-neutral-100 px-4 py-1 gap-1 md:px-6 md:py-3 gap-3 text-md rounded-md transition-all"
 				>
-					Sign Up
+					Criar conta
+				</a>
+            <a
+ 					hx-swap="transition:true"
+ 					href="/login"
+ 					class="hover:bg-pink-600 text-neutral-100 px-4 py-1 gap-1 md:px-6 md:py-3 gap-3 text-md rounded-md transition-all border border-pink-900 text-pink-900 hover:text-neutral-100"
+				>
+					Login
 				</a>
 			</footer>
 		}
