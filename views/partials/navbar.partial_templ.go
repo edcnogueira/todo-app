@@ -23,7 +23,7 @@ func Navbar(fromProtected bool, username string) templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<nav class=\"navbar bg-red-500 text-primary-content fixed top-0 z-10\"><div class=\"navbar-start\"><a hx-swap=\"transition:true\" class=\"btn btn-ghost text-xl\" href=\"/\">Todo List</a></div><div class=\"navbar-end\">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<nav class=\"navbar bg-red-500 text-primary-content fixed top-0 z-10\"><div class=\"navbar-start\"><a hx-swap=\"transition:true\" class=\"btn btn-ghost text-xl\" href=\"/\">Todo App</a></div><div class=\"navbar-end\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
