@@ -1,5 +1,7 @@
+TEMPL=go run github.com/a-h/templ/cmd/templ
+
 generate:
-	templ generate
+	$(TEMPL) generate
 
 dev:
-	templ generate --watch --proxy="http://localhost:3000" --cmd="go run ." 
+	$(TEMPL) generate --watch --proxy="http://localhost:3000" --cmd="go run ." 
